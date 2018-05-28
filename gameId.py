@@ -1,3 +1,8 @@
+##############################################
+### TODO
+### - write docstring
+##############################################
+
 # import modules
 import websocket
 import json
@@ -9,10 +14,6 @@ initial_call()
 # setup variables
 path = ''
 url = read('apiURL.txt')
-#url = "wss://fiba-3x3-scores-uat.herokuapp.com/api/ws"
-apiKey = read('apiKey.txt')
-requestId = "test connection"
-eventId = read('eventId.txt')
 gameId = ''
 ignorList =[]
 
@@ -20,9 +21,9 @@ ignorList =[]
 subscribe = {}
 subscribe['apiName'] = "TvFeedApiV3"
 subscribe['apiCommand'] = "subscribe"
-subscribe['apiKey'] = apiKey
-subscribe['requestId'] = requestId
-subscribe['eventId'] = eventId
+subscribe['apiKey'] = read('apiURL.txt')
+subscribe['requestId'] = "test connection"
+subscribe['eventId'] = read('eventId.txt')
 
 # setup WebSocket
 ws = websocket.WebSocket()
