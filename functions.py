@@ -1,3 +1,5 @@
+path = ''
+
 def read(inFile):
 	with open(inFile, 'r') as f:
 		read = f.read()
@@ -22,3 +24,11 @@ def format_timeRemaining(timeRemaining):
     minRemaining = (timeRemaining//1000 - timeRemaining//1000 %60)//60
     secRemaining= timeRemaining//1000 %60
     return str(minRemaining).zfill(2)+':'+str(secRemaining).zfill(2)
+    
+def initial_call():
+	fileList = ['gameName', 'time', 'homeTeamName', 'awayTeamName', 
+	'homeScore', 'awayScore', 'homeFouls', 'awayFouls', 'awayTeamId', 
+	'gameId', 'homeScore', 'homeTeamId']
+	for i in fileList:
+		write('0', path + i + '.txt')
+	return

@@ -9,11 +9,14 @@
 import websocket
 import json
 import time
-from functions import read, write, format_timeRemaining
+from functions import read, write, format_timeRemaining, initial_call
+
+initial_call()
 
 # setup variables
-path = 'data/'
-url = "wss://fiba-3x3-scores-uat.herokuapp.com/api/ws"
+path = ''
+url = read('apiURL.txt')
+#url = "wss://fiba-3x3-scores-uat.herokuapp.com/api/ws"
 apiKey = read('apiKey.txt')
 requestId = "test connection"
 eventId = read('eventId.txt')
