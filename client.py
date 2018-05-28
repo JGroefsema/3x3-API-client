@@ -45,38 +45,38 @@ while(True):
 		
 	
 	# get game info
-	homeTeamId = read('homeTeamId.txt')
-	awayTeamId = read('awayTeamId.txt')
-	if gameId != read('gameId.txt'):
-		gameId = read('gameId.txt')
-		print('Current game: {}'.format(read('gameName.txt')))
+	homeTeamId = read(path + 'homeTeamId.txt')
+	awayTeamId = read(path + 'awayTeamId.txt')
+	if gameId != read(path + 'gameId.txt'):
+		gameId = read(path + 'gameId.txt')
+		print('Current game: {}'.format(read(path + 'gameName.txt')))
 	
 	# get time remaining
 	try:
 		clockRunning = data[gameId]['clockRunning']
 		timeRemaining = data[gameId]['timeRemaining']
 		# write time remaining to file
-		write(format_timeRemaining(timeRemaining), 'time.txt')
+		write(format_timeRemaining(timeRemaining), path + 'time.txt')
 	except (KeyError, NameError):
 		pass
 	
 	# get score
 	try:
-		write(data[gameId]['currentTeamScore'][homeTeamId], 'homeScore.txt')
+		write(data[gameId]['currentTeamScore'][homeTeamId], path + 'homeScore.txt')
 	except (KeyError, NameError):
 		pass
 	try:
-		write(data[gameId]['currentTeamScore'][awayTeamId], 'awayScore.txt')
+		write(data[gameId]['currentTeamScore'][awayTeamId], path + 'awayScore.txt')
 	except (KeyError, NameError):
 		pass
 	
 	# get fouls
 	try:
-		write(data[gameId]['currentTeamFouls'][homeTeamId], 'homeFouls.txt')
+		write(data[gameId]['currentTeamFouls'][homeTeamId], path + 'homeFouls.txt')
 	except (KeyError, NameError):
 		pass
 	try:
-		write(data[gameId]['currentTeamFouls'][awayTeamId], 'awayFouls.txt')
+		write(data[gameId]['currentTeamFouls'][awayTeamId], path + 'awayFouls.txt')
 	except (KeyError, NameError):
 		pass
 

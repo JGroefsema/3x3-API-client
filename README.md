@@ -2,7 +2,11 @@
 An attempt at wrting a client for the FIBA 3x3 API.
 
 ## Usage
-The scripts will rely on 2 text files in the same folder as the script itself. A file named 'apiKey.txt' which contains your API key and a file named 'eventId.txt' which contains the ID of the event you want data from. Run 'client.py' and 'gameId.py'. gameId.py will give ask you when it found a new game if you want to make that the game for which data is collected by client.py.
+The scripts will rely on 3 text files in the same folder as the script itself. 
+* 'apiKey.txt' which contains your API key 
+* 'apiURL.txt' which contoins the API endpoint
+* 'eventId.txt' which contains the ID of the event you want data from 
+Run 'client.py' and 'gameId.py'. gameId.py will give ask you when it found a new game if you want to make that the game for which data is collected by client.py.
 
 ## Requirements
 * Python 3

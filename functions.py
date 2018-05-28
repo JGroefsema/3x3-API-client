@@ -11,11 +11,11 @@ def write(data, outFile):
     return
 
 def reset_score():
-	write('10:00', 'time.txt')
-	write('0', 'homeScore.txt')
-	write('0', 'awayScore.txt')
-	write('0', 'homeFouls.txt')
-	write('0', 'awayFouls.txt')
+	write('10:00', path + 'time.txt')
+	write('0', path + 'homeScore.txt')
+	write('0', path + 'awayScore.txt')
+	write('0', path + 'homeFouls.txt')
+	write('0', path + 'awayFouls.txt')
 	return
 
 def format_timeRemaining(timeRemaining):

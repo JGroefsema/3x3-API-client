@@ -5,10 +5,11 @@ import time
 from functions import read, write, reset_score
 
 # setup variables
+path = 'data/'
 url = "wss://fiba-3x3-scores-uat.herokuapp.com/api/ws"
-apiKey = read('apiKey.txt')
+apiKey = read(path + 'apiKey.txt')
 requestId = "test connection"
-eventId = read('eventId.txt')
+eventId = read(path + 'eventId.txt')
 gameId = ''
 ignorList =[]
 
@@ -30,8 +31,8 @@ ws.connect(url)
 ws.send(json.dumps(subscribe))
 
 # initialize files
-write('Home', 'homeTeamName.txt')
-write('Away', 'awayTeamName.txt')
+write('Home', path + 'homeTeamName.txt')
+write('Away', path + 'awayTeamName.txt')
 reset_score()
 
 # main loop
@@ -57,14 +58,14 @@ while(True):
 				print('New game found: {}, {} vs. {}'.format(gameName, homeTeamName, awayTeamName))
 				input_var = input('Make this new game the current game? No will ingor this game. [Y/n]')
 				if input_var.lower() == 'y':
-					write(i, 'gameId.txt')
+					write(i, path + 'gameId.txt')
 					homeTeamId = game_info['homeTeamId']
 					awayTeamId = game_info['awayTeamId']
-					write(data[homeTeamId]['teamName'], 'homeTeamName.txt')
-					write(data[awayTeamId]['teamName'], 'awayTeamName.txt')
-					write(homeTeamId, 'homeTeamId.txt')
-					write(awayTeamId, 'awayTeamId.txt')
-					write(gameName, 'gameName.txt')
+					write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
+					write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
+					write(homeTeamId, path + 'homeTeamId.txt')
+					write(awayTeamId, path + 'awayTeamId.txt')
+					write(gameName, path + 'gameName.txt')
 					reset_score()
 				elif input_var.lower() == 'n':
 					ignorList.append(i)

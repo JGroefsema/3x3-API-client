@@ -3,16 +3,18 @@ import os
 import pandas as pd
 from functions import read
 
+path = 'data/'
+
 # main loop
 while(True):
-	time = read('time.txt')
-	gameName = read('gameName.txt')
-	homeTeamName = read('homeTeamName.txt')
-	awayTeamName = read('awayTeamName.txt')
-	homeScore = read('homeScore.txt')
-	awayScore = read('awayScore.txt')
-	homeFouls = read('homeFouls.txt')
-	awayFouls = read('awayFouls.txt')
+	time = read(path + 'time.txt')
+	gameName = read(path + 'gameName.txt')
+	homeTeamName = read(path + 'homeTeamName.txt')
+	awayTeamName = read(path + 'awayTeamName.txt')
+	homeScore = read(path + 'homeScore.txt')
+	awayScore = read(path + 'awayScore.txt')
+	homeFouls = read(path + 'homeFouls.txt')
+	awayFouls = read(path + 'awayFouls.txt')
 	
 	df = pd.DataFrame([gameName, time, homeTeamName, awayTeamName, homeScore, 
 	awayScore, homeFouls, awayFouls])
