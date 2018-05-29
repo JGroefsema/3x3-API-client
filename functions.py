@@ -26,10 +26,16 @@ def format_timeRemaining(timeRemaining):
     return str(minRemaining).zfill(2)+':'+str(secRemaining).zfill(2)
     
 def initial_call():
-	# check if correct files are present
+	# check if correct files are present, else error out
 	read('apiKey.txt')
 	read('apiURL.txt')
 	read('eventId.txt')
+	
+	# create path dir
+	import os
+	if not os.path.exists(path):
+	    os.makedirs(path)
+
 	
 	# create neccesary files
 	fileList = ['gameName', 'time', 'homeTeamName', 'awayTeamName', 
