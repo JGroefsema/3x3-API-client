@@ -12,7 +12,7 @@ from functions import read, write, reset_score, initial_call
 initial_call()
 
 # setup variables
-path = ''
+path = 'data/'
 url = read('apiURL.txt')
 gameId = ''
 ignorList =[]
@@ -21,7 +21,7 @@ ignorList =[]
 subscribe = {}
 subscribe['apiName'] = "TvFeedApiV3"
 subscribe['apiCommand'] = "subscribe"
-subscribe['apiKey'] = read('apiURL.txt')
+subscribe['apiKey'] = read('apiKey.txt')
 subscribe['requestId'] = "test connection"
 subscribe['eventId'] = read('eventId.txt')
 

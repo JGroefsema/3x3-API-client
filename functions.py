@@ -1,4 +1,4 @@
-path = ''
+path = 'data/'
 
 def read(inFile):
 	with open(inFile, 'r') as f:
@@ -26,6 +26,12 @@ def format_timeRemaining(timeRemaining):
     return str(minRemaining).zfill(2)+':'+str(secRemaining).zfill(2)
     
 def initial_call():
+	# check if correct files are present
+	read('apiKey.txt')
+	read('apiURL.txt')
+	read('eventId.txt')
+	
+	# create neccesary files
 	fileList = ['gameName', 'time', 'homeTeamName', 'awayTeamName', 
 	'homeScore', 'awayScore', 'homeFouls', 'awayFouls', 'awayTeamId', 
 	'gameId', 'homeScore', 'homeTeamId']

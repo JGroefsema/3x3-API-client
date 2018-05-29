@@ -14,7 +14,7 @@ from functions import read, write, format_timeRemaining, initial_call
 initial_call()
 
 # setup variables
-path = ''
+path = 'data/'
 url = read('apiURL.txt')
 gameId = ''
 timeRemaining = 600000

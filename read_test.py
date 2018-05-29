@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from functions import read
 
-path = ''
+path = 'data/'
 
 # main loop
 while(True):
