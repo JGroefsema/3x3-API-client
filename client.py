@@ -1,8 +1,6 @@
 ##############################################
-### TODO
-### - write docstring
-### - reset score to 0 at start of game
-### - place data files in seperate folder
+### Get time, score & fouls from API based on
+### gameId in gameId.txt
 ##############################################
 
 # import modules

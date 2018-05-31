@@ -1,3 +1,8 @@
+##############################################
+### Read values from files and print these 
+### continues to the terminal for monitoring
+##############################################
+
 import time as timeModule
 import os
 import pandas as pd

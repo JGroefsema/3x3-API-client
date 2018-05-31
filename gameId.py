@@ -1,6 +1,5 @@
 ##############################################
-### TODO
-### - write docstring
+### Get gameId from API. Save it to gameId.txt
 ##############################################
 
 # import modules
