@@ -36,7 +36,6 @@ def initial_call():
 	if not os.path.exists(path):
 	    os.makedirs(path)
 
-	
 	# create neccesary files
 	fileList = ['gameName', 'time', 'homeTeamName', 'awayTeamName', 
 	'homeScore', 'awayScore', 'homeFouls', 'awayFouls', 'awayTeamId', 
