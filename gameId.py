@@ -60,36 +60,41 @@ while(True):
 				awayTeamId = game_info['awayTeamId']
 				awayTeamName = data[awayTeamId]['teamName']
 				print('New game found: {}, {} vs. {}'.format(gameName, homeTeamName, awayTeamName))
-				input_var = input('Make this new game the current game? No will ingor this game. [Y/n]')
+				if singleCourt:
+					print('*** New game selected ***')
+				else:
+					input_var = input('Make this new game the current game? No will ingor this game. [Y/n]')
 				if singleCourt:
 					write(i, path + 'gameId.txt')
 					homeTeamId = game_info['homeTeamId']
 					awayTeamId = game_info['awayTeamId']
-					write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
-					write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
+					write(homeTeamId, path + 'homeTeamId.txt')
+					write(awayTeamId, path + 'awayTeamId.txt')
+					write(gameName, path + 'gameName.txt')
 					try:
-						write(homeTeamId, path + 'homeTeamId.txt')
+						write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
 					except UnicodeEncodeError:
 						pass
 					try:
-						write(awayTeamId, path + 'awayTeamId.txt')
+						write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
 					except UnicodeEncodeError:
 						pass
+					reset_score()
 				elif input_var.lower() == 'y':
 					write(i, path + 'gameId.txt')
 					homeTeamId = game_info['homeTeamId']
 					awayTeamId = game_info['awayTeamId']
-					write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
-					write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
-					try:
-						write(homeTeamId, path + 'homeTeamId.txt')
-					except UnicodeEncodeError:
-						pass
-					try:
-						write(awayTeamId, path + 'awayTeamId.txt')
-					except UnicodeEncodeError:
-						pass
+					write(homeTeamId, path + 'homeTeamId.txt')
+					write(awayTeamId, path + 'awayTeamId.txt')
 					write(gameName, path + 'gameName.txt')
+					try:
+						write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
+					except UnicodeEncodeError:
+						pass
+					try:
+						write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
+					except UnicodeEncodeError:
+						pass
 					reset_score()
 				elif input_var.lower() == 'n':
 					ignorList.append(i)

@@ -43,3 +43,20 @@ def initial_call():
 	for i in fileList:
 		write('0', path + i + '.txt')
 	return
+
+def write_teamInfo():
+	write(i, path + 'gameId.txt')
+	homeTeamId = game_info['homeTeamId']
+	awayTeamId = game_info['awayTeamId']
+	write(homeTeamId, path + 'homeTeamId.txt')
+	write(awayTeamId, path + 'awayTeamId.txt')
+	write(gameName, path + 'gameName.txt')
+	try:
+		write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
+	except UnicodeEncodeError:
+		pass
+	try:
+		write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
+	except UnicodeEncodeError:
+		pass
+	return
