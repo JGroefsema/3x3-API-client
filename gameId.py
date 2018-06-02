@@ -66,8 +66,14 @@ while(True):
 					awayTeamId = game_info['awayTeamId']
 					write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
 					write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
-					write(homeTeamId, path + 'homeTeamId.txt')
-					write(awayTeamId, path + 'awayTeamId.txt')
+					try:
+						write(homeTeamId, path + 'homeTeamId.txt')
+					except UnicodeEncodeError:
+						pass
+					try:
+						write(awayTeamId, path + 'awayTeamId.txt')
+					except UnicodeEncodeError:
+						pass
 					write(gameName, path + 'gameName.txt')
 					reset_score()
 				elif input_var.lower() == 'n':
