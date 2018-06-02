@@ -63,7 +63,7 @@ while(True):
 				if singleCourt:
 					print('*** New game selected ***')
 				else:
-					input_var = input('Make this new game the current game? No will ingor this game. [Y/n]')
+					input_var = input('Make this new game the current game? No will ignor this game. [Y/n]')
 				if singleCourt:
 					write(i, path + 'gameId.txt')
 					homeTeamId = game_info['homeTeamId']
