@@ -9,8 +9,6 @@ import json
 import time
 from functions import read, write, format_timeRemaining, initial_call
 
-initial_call()
-
 # setup variables
 path = 'data/'
 url = read('apiURL.txt')

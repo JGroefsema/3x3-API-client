@@ -15,6 +15,7 @@ path = 'data/'
 url = read('apiURL.txt')
 gameId = ''
 ignorList =[]
+singleCourt = True
 
 # make subscribe message
 subscribe = {}
@@ -60,7 +61,21 @@ while(True):
 				awayTeamName = data[awayTeamId]['teamName']
 				print('New game found: {}, {} vs. {}'.format(gameName, homeTeamName, awayTeamName))
 				input_var = input('Make this new game the current game? No will ingor this game. [Y/n]')
-				if input_var.lower() == 'y':
+				if singleCourt:
+					write(i, path + 'gameId.txt')
+					homeTeamId = game_info['homeTeamId']
+					awayTeamId = game_info['awayTeamId']
+					write(data[homeTeamId]['teamName'], path + 'homeTeamName.txt')
+					write(data[awayTeamId]['teamName'], path + 'awayTeamName.txt')
+					try:
+						write(homeTeamId, path + 'homeTeamId.txt')
+					except UnicodeEncodeError:
+						pass
+					try:
+						write(awayTeamId, path + 'awayTeamId.txt')
+					except UnicodeEncodeError:
+						pass
+				elif input_var.lower() == 'y':
 					write(i, path + 'gameId.txt')
 					homeTeamId = game_info['homeTeamId']
 					awayTeamId = game_info['awayTeamId']
