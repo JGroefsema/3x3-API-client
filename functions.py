@@ -21,9 +21,9 @@ def reset_score():
 	return
 
 def format_timeRemaining(timeRemaining):
-    minRemaining = (timeRemaining//1000 - timeRemaining//1000 %60)//60
+    minRemaining = (timeRemaining//1000 - timeRemaining//1000 %60)//60//1
     secRemaining= timeRemaining//1000 %60
-    return str(minRemaining).zfill(2)+':'+str(secRemaining).zfill(2)
+    return str(int(minRemaining)).zfill(2)+':'+str(int(secRemaining)).zfill(2)
     
 def initial_call():
 	# check if correct files are present, else error out
