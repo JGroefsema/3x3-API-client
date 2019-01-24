@@ -1,5 +1,5 @@
 # 3x3 API Client
-An attempt at writing a client for the FIBA 3x3 API.
+An attempt at writing a client for the FIBA 3x3 scoring feed API.
 
 ## Usage
 The scripts will rely on 3 text files in the same folder as the script itself. 
